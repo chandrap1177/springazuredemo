@@ -19,7 +19,7 @@ public class Product {
 
     @SequenceGenerator(name = "product_generator",sequenceName = "product_sequence_generator", allocationSize = 15)
     private int id;
-    @Column(name="Product_Name" ,nullable = false)
+    @Column(name="Product_Name",nullable = false)
     private String name;
     @Column(name="Price")
     private double price;

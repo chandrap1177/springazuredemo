@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/products")
@@ -28,4 +29,17 @@ public class ProductController {
     {
        return  productService.saveAll(listOfProducts);
     }
+    
+    
+    @GetMapping("/{productId}")
+    public ResponseEntity<Optional<Product>> getProductById(@PathVariable Integer productId) {
+        Optional<Product> product = productService.getProductById(productId);
+        if (product != null) {
+            return ResponseEntity.ok(product);
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
+    
+    
 }

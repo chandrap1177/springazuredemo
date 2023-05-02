@@ -10,30 +10,27 @@ import java.util.Optional;
 
 @Service
 public class ProductService {
-    @Autowired
-    private ProductRepository productRepository;
+	@Autowired
+	private ProductRepository productRepository;
 
-   public Product getProductByName(String name)
-   {
-       return productRepository.findByName(name);
-   }
+	public Product getProductByName(String name) {
+		return productRepository.findByName(name);
+	}
 
+	public List<Product> saveAll(List<Product> products) {
+		return productRepository.saveAll(products);
+	}
 
-   public List<Product> saveAll(List<Product> products)
-   {
-       return productRepository.saveAll(products);
-   }
-   public List<Product> getAllProduct()
-   {
-       return productRepository.findAll();
-   }
+	public List<Product> getAllProduct() {
+		return productRepository.findAll();
+	}
 
-   public Optional<Product> getProductById(String id)
-   {
-       return productRepository.findById(id);
-   }
+	public Product save(Product product) {
+		return productRepository.save(product);
+	}
 
-    public Product save(Product product) {
-       return productRepository.save(product);
-    }
+	public Optional<Product> getProductById(Integer productId) {
+		// TODO Auto-generated method stub
+		return productRepository.findById(productId);
+	}
 }
