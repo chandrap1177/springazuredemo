@@ -20,7 +20,7 @@ public class Product {
     @SequenceGenerator(name = "product_generator",sequenceName = "product_sequence_generator", allocationSize = 15)
     private int id;
     @Column(name="Product_Name",nullable = false)
-    private String name;
+    private String productName;
     @Column(name="Price")
     private double price;
     @Column(name="Quantity")
@@ -34,5 +34,5 @@ public class Product {
 
     private LocalDateTime lastUpdatedDate;
 
-
+   private String test;
 }
