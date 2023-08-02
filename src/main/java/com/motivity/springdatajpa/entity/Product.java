@@ -35,4 +35,5 @@ public class Product {
     private LocalDateTime lastUpdatedDate;
 
    private String test;
+   private String test2;
 }
